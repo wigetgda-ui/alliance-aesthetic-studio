@@ -80,6 +80,10 @@ const Pricing = () => {
         <p className="mx-auto mt-8 max-w-3xl text-center font-body text-xs leading-6 text-muted-foreground">
           {pricingFootnote}
         </p>
+        <p className="mx-auto mt-4 max-w-3xl text-center font-body text-xs leading-6 text-muted-foreground">
+          Cennik ma charakter informacyjny i może ulec zmianie. Ostateczny zakres zabiegu oraz
+          koszt potwierdzamy po konsultacji.
+        </p>
       </div>
     </section>
   );
