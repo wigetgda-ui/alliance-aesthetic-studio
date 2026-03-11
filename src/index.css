@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 96%;
+    --foreground: 20 8% 16%;
+
+    --card: 40 30% 94%;
+    --card-foreground: 20 8% 16%;
+
+    --popover: 40 33% 96%;
+    --popover-foreground: 20 8% 16%;
+
+    --primary: 0 0% 7%;
+    --primary-foreground: 40 33% 96%;
+
+    --secondary: 35 25% 91%;
+    --secondary-foreground: 20 8% 16%;
+
+    --muted: 35 20% 88%;
+    --muted-foreground: 20 6% 40%;
+
+    --accent: 35 18% 85%;
+    --accent-foreground: 20 8% 16%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 20% 85%;
+    --input: 35 20% 88%;
+    --ring: 20 8% 16%;
+
+    --radius: 1rem;
+
+    /* Custom Alliance Aesthetic colors */
+    --ivory: 40 33% 94%;
+    --ecru: 35 25% 91%;
+    --warm-beige: 35 18% 88%;
+    --graphite: 20 8% 16%;
+    --soft-black: 0 0% 7%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(40 33% 96%) 0%, hsl(35 25% 91%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 33% 94%) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(20 8% 16% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(20 8% 16% / 0.1);
+    --shadow-elegant: 0 20px 50px -15px hsl(20 8% 16% / 0.15);
+  }
+
+  .dark {
+    --background: 20 8% 8%;
+    --foreground: 40 33% 94%;
+
+    --card: 20 8% 12%;
+    --card-foreground: 40 33% 94%;
+
+    --popover: 20 8% 8%;
+    --popover-foreground: 40 33% 94%;
+
+    --primary: 40 33% 94%;
+    --primary-foreground: 20 8% 8%;
+
+    --secondary: 20 6% 18%;
+    --secondary-foreground: 40 33% 94%;
+
+    --muted: 20 6% 22%;
+    --muted-foreground: 35 15% 65%;
+
+    --accent: 20 6% 18%;
+    --accent-foreground: 40 33% 94%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 40 33% 94%;
+
+    --border: 20 6% 22%;
+    --input: 20 6% 22%;
+    --ring: 40 33% 94%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    @apply text-foreground font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
